@@ -4,9 +4,10 @@ import { levels } from "../lib/data";
 export class GameManager {
     currentLevelIndex: number = 0;
     score: number = 0;
+    private k: KAPLAYCtx;
 
-    constructor(private k: KAPLAYCtx) {
-        // empty lang muna
+    constructor(canvas: KAPLAYCtx) {
+        this.k = canvas;
     }
 
     startLevel(levelIdx: number, score: number) {

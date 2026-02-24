@@ -76,6 +76,7 @@ export class QuizSystem {
                 k.z(100),
                 k.fixed(),
                 k.color(8, 135, 43),
+                k.scale(),
                 uiTag,
                 "choiceBtn"
             ]);
