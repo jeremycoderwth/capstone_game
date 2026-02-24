@@ -913,6 +913,7 @@ k.scene("redirection", () => {
   k.wait(2.5, async () => {
     await initGame();
     blank.destroy();
+    loadingText.destroy();
   });
 });
 
