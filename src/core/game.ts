@@ -40,25 +40,26 @@ export class GameManager {
 }
 
 export class ProgressManager {
-    private static STORAGE_KEY = "game_progress";
+    static getStorageKey(userId: string) {
+       return  `game_progress_${userId}`;
+    }
 
-    static getUnlockedLevels(): number {
-        const saved = localStorage.getItem(this.STORAGE_KEY);
-
+    static getUnlockedLevels(userId: string): number {
+        const saved = localStorage.getItem(this.getStorageKey(userId));
         if (!saved) return 0;
 
         return parseInt(saved);
     }
 
-    static unlockLevel(levelIndex: number) {
-        const current = this.getUnlockedLevels();
+    static unlockLevel(levelIndex: number, userId: string) {
+        const current = this.getUnlockedLevels(userId);
 
         if (levelIndex > current) {
-            localStorage.setItem(this.STORAGE_KEY, levelIndex.toString());
+            localStorage.setItem(this.getStorageKey(userId), levelIndex.toString());
         }
     }
 
-    static reset() {
-        localStorage.removeItem(this.STORAGE_KEY);
+    static reset(userId: string) {
+        localStorage.removeItem(this.getStorageKey(userId));
     }
 }
