@@ -666,10 +666,11 @@ k.scene("freestyle", (levels?: LEVELS[]) => {
   ]);
 
   logoutBtn.onClick(() => {
-    logout();
     userState.user.id = "";
     userState.user.name = "";
     userState.selectedCharacter = null;
+    ProgressManager.reset();
+    logout();
     k.go("redirection");
   });
 
