@@ -448,7 +448,7 @@ k.scene("quest", (levelIndex: number) => {
         completedAt: levelResult.completedAt
       });
       await saveLevelResult(levelResult);
-      ProgressManager.unlockLevel(currentLevelIdx + 1);
+      ProgressManager.unlockLevel(currentLevelIdx + 1, userState.user.id);
       const nextLevelIdx = progress.getNextLevelIdx();
 
       if (nextLevelIdx !== null) {
@@ -575,7 +575,7 @@ k.scene("game-over", () => {
 });
 
 k.scene("freestyle", (levels?: LEVELS[]) => {
-  const unlocked = ProgressManager.getUnlockedLevels();
+  const unlocked = ProgressManager.getUnlockedLevels(userState.user.id);
   const definedLevels = levels ?? [];
   const selected = userState.selectedCharacter;
 
@@ -643,7 +643,7 @@ k.scene("freestyle", (levels?: LEVELS[]) => {
   ]);
 
   restartBtn.onClick(() => {
-    ProgressManager.reset();
+    ProgressManager.reset(userState.user.id);
     k.go("quest", 0, userState.user.name);
   });
 
@@ -666,10 +666,10 @@ k.scene("freestyle", (levels?: LEVELS[]) => {
   ]);
 
   logoutBtn.onClick(() => {
+    ProgressManager.reset(userState.user.id);
     userState.user.id = "";
     userState.user.name = "";
     userState.selectedCharacter = null;
-    ProgressManager.reset();
     logout();
     k.go("redirection");
   });
@@ -918,26 +918,23 @@ k.scene("redirection", () => {
   });
 });
 
-const unlocked = ProgressManager.getUnlockedLevels();
-
 async function initGame() {
   await initUser();
-  const user = userState.user.name;
 
-  if (!user) {
-    showLoginUI(() => {
-      startGame(unlocked);
-    })
-  } else {
-    startGame(unlocked)
+  if (!userState.user.name) {
+    return showLoginUI(initGame);
   }
+
+  startGame();
 }
 
-function startGame(level: number) {
-  if (level <= 0) {
+function startGame() {
+  const unlocked = ProgressManager.getUnlockedLevels(userState.user.id);
+
+  if (!unlocked || unlocked <= 0) {
     k.go("introduction");
   } else {
-    k.go("freestyle", levels);
+    k.go("freestyle", levels, userState.user.name);
   }
 }
 
