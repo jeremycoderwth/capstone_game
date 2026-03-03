@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Research Dashboard</title>
+  <link rel="stylesheet" href="/src/researcher-page-style.css">
+</head>
+<body class="bg-gray-100 min-h-screen">
+
+  <!-- Login Section -->
+  <div id="loginSection" class="flex items-center justify-center h-screen">
+    <div class="bg-white p-8 rounded-xl shadow-md w-96">
+      <h1 class="text-4xl font-bold mb-4 text-center">Data Gathered Access</h1>
+      <input id="email" type="email" placeholder="Researcher Email"
+        class="w-full border p-2 rounded mb-3"/>
+      <input id="password" type="password" placeholder="Password"
+        class="w-full border p-2 rounded mb-4"/>
+      <button id="loginBtn"
+        class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">
+        Login
+      </button>
+      <p id="errorMsg" class="text-red-500 text-sm mt-2 hidden"></p>
+    </div>
+  </div>
+
+  <!-- Dashboard Section -->
+  <div id="dashboard" class="hidden p-8">
+    <h1 class="text-3xl font-bold mb-6">Game Research Dashboard</h1>
+    <button 
+      id="logoutBtn"
+      class="bg-red-600 text-white px-4 py-2 rounded mb-6 hover:bg-red-700">
+      Logout Account
+    </button>
+    <div class="grid grid-cols-3 gap-6 mb-8">
+      <div class="bg-white p-6 rounded shadow">
+        <h2 class="text-lg font-semibold">Total Players</h2>
+        <p id="totalPlayers" class="text-2xl mt-2">0</p>
+      </div>
+      <div class="bg-white p-6 rounded shadow">
+        <h2 class="text-lg font-semibold">Average Score</h2>
+        <p id="avgScore" class="text-2xl mt-2">0</p>
+      </div>
+      <div class="bg-white p-6 rounded shadow">
+        <h2 class="text-lg font-semibold">Average Time Spent</h2>
+        <p id="avgTime" class="text-2xl mt-2">0</p>
+      </div>
+      <div class="bg-white p-6 rounded shadow">
+        <h2 class="text-lg font-semibold">Completed All Levels</h2>
+        <p id="completedCount" class="text-2xl mt-2">0</p>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded shadow mb-4">
+      <h2 class="text-lg font-semibold mb-4">Player List</h2>
+      <button 
+        id="refreshBtn"
+        class="bg-blue-600 text-white px-4 py-2 rounded mb-6 hover:bg-blue-700">
+        Refresh Data
+      </button>
+      <table class="w-full text-left">
+        <thead>
+          <tr class="border-b">
+            <th class="py-2">Name</th>
+            <th>Total Score</th>
+            <th>Time Spent</th>
+            <th>Completed At</th>
+          </tr>
+        </thead>
+        <tbody id="playerTable"></tbody>
+      </table>
+    </div>
+    <div class="bg-white p-6 rounded shadow">
+      <h2 class="text-lg font-semibold mb-4">Player Scores</h2>
+      <button 
+        id="refreshBtn2"
+        class="bg-blue-600 text-white px-4 py-2 rounded mb-6 hover:bg-blue-700">
+        Refresh Data
+      </button>
+      <table class="w-full text-left">
+        <thead>
+          <tr class="border-b">
+            <th class="py-2">Player ID</th>
+            <th>Category</th>
+            <th>Level</th>
+            <th>Score</th>
+            <th>Completed At</th>
+          </tr>
+        </thead>
+        <tbody id="playerTable2"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script type="module" src="/src/researcher/research.ts"></script>
+</body>
+</html>
