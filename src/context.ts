@@ -4,6 +4,7 @@ const k = kaplay({
     width: 1300,
     height: 600,
     // add background if needed or requested
+    background: [0, 0, 0, 0],
     global: false,
     debug: true,
     touchToMouse: true,

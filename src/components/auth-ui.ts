@@ -9,7 +9,7 @@ export function showLoginUI(onSuccess: () => void) {
             <div style="text-align:center; margin-bottom: 4px;">
                 <div style="font-size: 2.4rem; margin-bottom: 8px; filter: drop-shadow(0 0 12px rgba(120,200,60,0.5));">🌲</div>
                 <div class="logo">Steward's Quest</div>
-                <div class="tagline">Playw with purpose; your choice shape the world</div>
+                <div class="tagline">Play with purpose; your choice shape the world</div>
             </div>
             <div class="tabs">
                 <button class="tab-btn active" id="loginBtn">Sign In</button>

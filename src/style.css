@@ -21,7 +21,10 @@
 
 body {
     font-family: 'Lato', sans-serif;
-    background-color: #0d1f0b;
+    background: url('/backgrounds/jungle.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
     overflow: hidden;
 }
 

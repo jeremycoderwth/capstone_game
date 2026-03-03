@@ -194,10 +194,10 @@ export const fireQuizQuestion: QuizQuestion[] = [
         category: "fire",
         question: "Which human activity is responsible for causing wildfires in areas affected by deforestation?",
         choices: [
-            { index: 1, text: "logging operations that leave behind tree stumps" },
-            { index: 2, text: "mining activities that disturbs soil layers" },
+            { index: 1, text: "Logging operations that leave behind tree stumps" },
+            { index: 2, text: "Mining activities that disturbs soil layers" },
             { index: 3, text: "Slash-and-burn agriculture for land clearing" },
-            { index: 4, text: "construction of rural roads through forests"}
+            { index: 4, text: "Construction of rural roads through forests"}
         ],
         correctIndex: 2,
         targetTile: { x: 9, y: 14, radius: 2 }
@@ -209,7 +209,7 @@ export const fireQuizQuestion: QuizQuestion[] = [
         choices: [
             { index: 1, text: "It messes with the natural structure of the forest and affects the ground-level conditions" },
             { index: 2, text: "it reduces tree cover that causes low moisture and increases dryness" },
-            { index: 3, text: "Sit increases rainfall, making lightning strikes more often" },
+            { index: 3, text: "It increases rainfall, making lightning strikes more often" },
             { index: 4, text: "It causes animals to migrate and accidentally start fires"}
         ],
         correctIndex: 1,
@@ -220,10 +220,10 @@ export const fireQuizQuestion: QuizQuestion[] = [
         category: "fire",
         question: "Which factor directly increases the intensity of wildfires?",
         choices: [
-            { index: 1, text: "long periods of heat and drought that dry vegetation and reduce natural moisture" },
-            { index: 2, text: "leaving fallen branches and leaves on the ground so they can decompose naturally rs" },
-            { index: 3, text: "building wooden structures in forests that could catch a fire" },
-            { index: 4, text: "planting trees that can provide as fuel for fires"}
+            { index: 1, text: "Long periods of heat and drought that dry vegetation and reduce natural moisture" },
+            { index: 2, text: "Leaving fallen branches and leaves on the ground so they can decompose naturally rs" },
+            { index: 3, text: "Building wooden structures in forests that could catch a fire" },
+            { index: 4, text: "Planting trees that can provide as fuel for fires"}
         ],
         correctIndex: 0,
         targetTile: { x: 15, y: 9, radius: 2 }
@@ -263,7 +263,7 @@ export const soilPollutionQuizQuestion: QuizQuestion[] = [
         question: "What type of environment is commonly noticed after mining-related deforestation?",
         choices: [
             { index: 1, text: "Healthy forest soil" },
-            { index: 2, text: "EAgricultural land" },
+            { index: 2, text: "Agricultural land" },
             { index: 3, text: "Bare and degraded soil" },
             { index: 4, text: "Wetland formation"}
         ],
@@ -289,14 +289,14 @@ export const urbanQuizQuestion: QuizQuestion[] = [
     {
         id: 'URBAN-002',
         category: "urbanization",
-        question: "Why can urbanization lead to habitat loss?",
+        question: "Which change in land use is most tied to deforestation from urban growth?",
         choices: [
-            { index: 1, text: "Transforming land into tourist attractions" },
+            { index: 1, text: "Transforming land into tourist attractions" }, 
             { index: 2, text: "Planting a lot of trees on lands that are already cleared" },
             { index: 3, text: "Forests being converted into farmlands or plantations" },
             { index: 4, text: "Advocate for policies that stop illegal logging" },
         ],
-        correctIndex: 1,
+        correctIndex: 2,
         targetTile: { x: 1, y: 7, radius: 2 }
     },
     {

@@ -1,6 +1,9 @@
 import k from "../context";
 
 export function loadAssets() {
+    k.loadSprite('forest', '/backgrounds/pixel-forest.png');
+    k.loadSprite('jungle', '/backgrounds/jungle.jpg');
+
     k.loadSprite("boy", '/sprites/boy.png', {
         sliceX: 4,
         sliceY: 4,

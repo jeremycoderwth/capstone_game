@@ -28,14 +28,14 @@ k.scene("introduction", () => {
   const dialogBoxWidth = 900;
   const dialogBoxHeight = 500;
 
-  // overlay
-  k.add([
-    k.rect(k.width(), k.height()),
-    k.color(255, 255, 255),
-    k.opacity(0.6),
-    k.fixed(),
-    "overlay"
-  ]);
+  // // overlay
+  // k.add([
+  //   k.rect(k.width(), k.height()),
+  //   k.color(255, 255, 255),
+  //   k.opacity(0.6),
+  //   k.fixed(),
+  //   "overlay"
+  // ]);
 
   // heading title
   k.add([
@@ -98,7 +98,15 @@ k.scene("introduction", () => {
 k.scene("selection", () => {
   let currentIndex = 0;
 
-  // overlay 
+  // overlay background image
+  k.add([
+    k.sprite('forest'),
+    k.pos(k.center()),
+    k.anchor('center'),
+    k.z(0),
+    "bg-overlay"
+  ]);
+
   k.add([
     k.rect(900, 500, { radius: 20 }),
     k.pos(k.center()),
